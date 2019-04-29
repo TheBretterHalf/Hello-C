@@ -3,6 +3,8 @@
 
 int main (void)
 {
-    int i, j, height;
+    int i, space, k=0;
     int height = get_int("Height :\n");
+
 }
+
