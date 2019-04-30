@@ -7,7 +7,7 @@ int main(void)
     do
     {
         height = get_int("Height : ");
-        if (height>0 && height<9)
+        if (height > 0 && height < 9)
         {
             for (i = 2; i <= height + 1; i++, k = 0)
             {
@@ -27,8 +27,11 @@ int main(void)
                 }
                 printf("\n");
             }
-        }else{
+        }
+        else
+        {
             height = get_int("Height : ");
+            break;
         }
     }
     while (height > 0 && height < 9);
