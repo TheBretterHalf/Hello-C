@@ -6,7 +6,8 @@ int main(void)
 {
     int i, j, space, k = 0;
     int height = get_int("Height :\n");
-    do {
+    do
+    {
         for (i = 1; i <= height; i++, k = 0)
         {
             for (space = 0; space <= height - i; space++)
@@ -25,7 +26,8 @@ int main(void)
             }
             printf("\n");
         }
-        return 0;
-    } while (height!=0  && height>0);
+
+    } while (height>1  && height<8);
+    return 0;
 }
 
