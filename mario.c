@@ -3,18 +3,23 @@
 
 int main (void)
 {
-    int i, space, k=0;
+    int i, j, space, k=0;
     int height = get_int("Height :\n");
-    for (i=1; i<=height; i++; k=0);
+    for (i=1; i<=height; i++, k=0)
     {
-        for (space=1; space<=rows-i; space++)
+        for (space=1; space<=height-i; space++)
         {
             printf(" ");
         }
         while (k!=i-1)
         {
-            printf("* ");
+            printf("#");
             ++k;
+        }
+        printf(" ");
+        for (j=1; j<=height; j++)
+        {
+            printf("#");
         }
         printf("\n");
     }
