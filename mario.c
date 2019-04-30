@@ -31,7 +31,6 @@ int main(void)
         else
         {
             height = get_int("Height : ");
-            break;
         }
     }
     while (height > 0 && height < 9);
