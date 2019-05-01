@@ -14,6 +14,7 @@ int main (void)
     int pennies;
     int changeq;
     int changed;
+    int changen;
     do
     {
         cash = get_float("Cash: ");
@@ -34,6 +35,11 @@ int main (void)
                 nickels=changed/5;
                 printf("nickels: %i\n", nickels);
                 changen=changed%5;
+                if(changen>=1)
+                {
+                    pennies=changen;
+                    printf("pennies: %i\n", pennies);
+                }
             }
         }
     }
