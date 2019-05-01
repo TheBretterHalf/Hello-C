@@ -24,11 +24,6 @@ int main(void)
                 printf("#");
                 ++k;
             }
-            printf("  ");
-            for (j = 1; j <= k; j++)
-            {
-                printf("#");
-            }
             printf("\n");
         }
     }
