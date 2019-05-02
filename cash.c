@@ -1,47 +1,55 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
-int main (void)
+int main(void)
 
 {
-    int coins=0;
+    int coins = 0;
     float cash;
-    int money;
+    float money;
     int i;
-    int quarters;
-    int nickels;
-    int dimes;
-    int pennies;
+    int quarters, nickels, dimes, pennies = 0;
+    int total;
     do
     {
         cash = get_float("Change Owed: ");
-        money=cash*100;
-    } while (money<0);
-    if(money>=25)
+        //printf("%f\n", cash);
+        money = round(cash * 100);
+        //printf("%f\n", money);
+    }
+    while (money < 0);
+    if (money >= 25)
     {
-        quarters=money/25;
+        //printf("%f\n", money);
+        quarters = money / 25;
         //printf("quarters: %i\n", quarters);
-        money=money-(25*quarters);
+        //printf("%i\n %i\n", 25*quarters, money);
+        money = money - (25 * quarters);
+        //printf("%i\n", money);
     }
-    if (money>=10)
+    if (money >= 10)
     {
-        dimes=money/10;
+        dimes = money / 10;
         //printf("dimes: %i\n", dimes);
-        money=money-(10*dimes);
+        money = money - (10 * dimes);
+        //printf("%i\n", money);
     }
-    if (money>=5)
+    if (money >= 5)
     {
-        nickels=money/5;
+        nickels = money / 5;
         //printf("nickels: %i\n", nickels);
-        money=money-(5*nickels);
+        money = money - (5 * nickels);
+        //printf("%i\n", money);
     }
-    else
+    if (money >= 0)
     {
-        pennies=money;
+        pennies = money;
         //printf("pennies: %i\n", pennies);
+        //printf("%i\n", money);
 
     }
-    total = quarters+dimes+nickels+pennies;
+    total = quarters + dimes + nickels + pennies;
     printf("%i\n", total);
     return 0;
 }
