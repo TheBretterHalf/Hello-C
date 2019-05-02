@@ -2,14 +2,20 @@
 #include <math.h>
 #include <stdio.h>
 
-long-long number;
+long long int number;
+int numdigits;
 
 int main(void)
 {
     do
     {
         number = get_long_long("Number: ");
+        if (number>0)
+        {
+            numdigits = floor(log10(number)) + 1;
+        }
+        printf("%i\n", numdigits);
     }
-    while(number<1000000000000 || number>10000000000000000);
+    while(numdigits!=16 || numdigits!=13 || numdigits!=15);
 
 }
