@@ -12,35 +12,36 @@ int main (void)
     int nickels;
     int dimes;
     int pennies;
-    int changeq;
-    int changed;
-    int changen;
     do
     {
-        cash = get_float("Cash: ");
+        cash = get_float("Change Owed: ");
         money=cash*100;
     } while (money<0);
     if(money>=25)
     {
         quarters=money/25;
-        printf("quarters: %i\n", quarters);
-        changeq=money%25;
-        if (changeq>=10)
-        {
-            dimes=changeq/10;
-            printf("dimes: %i\n", dimes);
-            changed=changeq%10;
-            if (changed>=5)
-            {
-                nickels=changed/5;
-                printf("nickels: %i\n", nickels);
-                changen=changed%5;
-                if(changen>=1)
-                {
-                    pennies=changen;
-                    printf("pennies: %i\n", pennies);
-                }
-            }
-        }
+        //printf("quarters: %i\n", quarters);
+        money=money-(25*quarters);
     }
+    if (money>=10)
+    {
+        dimes=money/10;
+        //printf("dimes: %i\n", dimes);
+        money=money-(10*dimes);
+    }
+    if (money>=5)
+    {
+        nickels=money/5;
+        //printf("nickels: %i\n", nickels);
+        money=money-(5*nickels);
+    }
+    else
+    {
+        pennies=money;
+        //printf("pennies: %i\n", pennies);
+
+    }
+    total = quarters+dimes+nickels+pennies;
+    printf("%i\n", total);
+    return 0;
 }
