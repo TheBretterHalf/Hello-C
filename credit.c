@@ -48,10 +48,10 @@ int main(void)
         eventotal= eventotal+edigit;
         //printf("%d\n", eventotal);
     }
-    printf("%d\n", oddtotal);
-    printf("%d\n", eventotal);
+    //printf("%d\n", oddtotal);
+    //printf("%d\n", eventotal);
     int sumcheck = (eventotal+oddtotal)%10;
-    printf("%d\n", sumcheck);
+    //printf("%d\n", sumcheck);
     if (sumcheck==0)
     {
         if (numdigits==15)
@@ -69,7 +69,33 @@ int main(void)
         }
         if (numdigits==16)
         {
-
+            long long int masterfirsttwo=number/pow(10, numdigits-2);
+            //printf("%lli\n", masterfirsttwo);
+            long long int visafirstone=number/pow(10,numdigits-1);
+            if (masterfirsttwo>50 && masterfirsttwo<56)
+            {
+                printf("MASTERCARD\n");
+            }
+            if (visafirstone==4)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
+        }
+        if(numdigits==13)
+        {
+            long long int visafirstone=number/pow(10,numdigits-1);
+            if (visafirstone==4)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
     }
     else
@@ -78,5 +104,3 @@ int main(void)
     }
 
 }
-//example values
-//378282246310005
