@@ -35,9 +35,20 @@ int main(void)
         //printf("%d\n", digit);
         oddtotal=oddtotal+digit;
         //printf("%d\n", oddtotal);
-        int edigit = evendigits % 100;
+        int edigit = (evendigits/10) % 10;
         evendigits = evendigits /100;
-        printf("%d", edigit);
+        eventotal= eventotal+edigit;
     }
-    printf("%d\n", oddtotal);
+    //printf("%d\n", oddtotal);
+    //printf("%d\n", eventotal);
+    int sumcheck = ((2*eventotal)+oddtotal)%10;
+    printf("%d\n", sumcheck);
+    if (sumcheck=0)
+    {
+        if (numdigits=15)
+        {
+
+        }
+    }
+
 }
