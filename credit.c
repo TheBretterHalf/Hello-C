@@ -28,7 +28,7 @@ int main(void)
     long long int evendigits=number;
     int oddtotal=0;
     int eventotal=0;
-    while(odddigits != 0)
+    while(odddigits > 0)
     {
         int digit = odddigits % 10;
         odddigits = odddigits / 100;
@@ -37,10 +37,14 @@ int main(void)
         //printf("%d\n", oddtotal);
         int edigit = (evendigits/10) % 10;
         evendigits = evendigits /100;
+        //printf("%d\n", edigit);
+        edigit=2*edigit;
+        printf("%d\n", edigit);
         eventotal= eventotal+edigit;
+        //printf("%d\n", eventotal);
     }
-    //printf("%d\n", oddtotal);
-    //printf("%d\n", eventotal);
+    printf("%d\n", oddtotal);
+    printf("%d\n", 2*eventotal);
     int sumcheck = ((2*eventotal)+oddtotal)%10;
     printf("%d\n", sumcheck);
     if (sumcheck==0)
