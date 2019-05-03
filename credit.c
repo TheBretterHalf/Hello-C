@@ -43,12 +43,31 @@ int main(void)
     //printf("%d\n", eventotal);
     int sumcheck = ((2*eventotal)+oddtotal)%10;
     printf("%d\n", sumcheck);
-    if (sumcheck=0)
+    if (sumcheck==0)
     {
-        if (numdigits=15)
+        if (numdigits==15)
+        {
+            long long int amexfirsttwo=number/pow(10, numdigits-2);
+            //printf("%lli\n", amexfirsttwo);
+            if(amexfirsttwo==34 || amexfirsttwo==37)
+            {
+                printf("AMEX\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
+        }
+        if (numdigits==16)
         {
 
         }
     }
+    else
+    {
+        printf("INVALID\n");
+    }
 
 }
+//example values
+//378282246310005
