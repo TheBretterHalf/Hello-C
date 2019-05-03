@@ -39,13 +39,18 @@ int main(void)
         evendigits = evendigits /100;
         //printf("%d\n", edigit);
         edigit=2*edigit;
-        printf("%d\n", edigit);
+        if(edigit>9)
+        {
+            edigit=edigit/10+edigit%10;
+            //printf("%d\n", edigit);
+        }
+        //printf("%d\n", edigit);
         eventotal= eventotal+edigit;
         //printf("%d\n", eventotal);
     }
     printf("%d\n", oddtotal);
-    printf("%d\n", 2*eventotal);
-    int sumcheck = ((2*eventotal)+oddtotal)%10;
+    printf("%d\n", eventotal);
+    int sumcheck = (eventotal+oddtotal)%10;
     printf("%d\n", sumcheck);
     if (sumcheck==0)
     {
